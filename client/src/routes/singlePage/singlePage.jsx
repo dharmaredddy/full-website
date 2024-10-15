@@ -129,8 +129,8 @@ function SinglePage() {
             <div className="feature">
               <img src="/fee.png" alt="" />
               <div className="featureText">
-                <span>Restaurant</span>
-                <p>{post.postDetail.restaurant}m away</p>
+                <span>Contact Number</span>
+                <p>{post.postDetail.contact}</p>
               </div>
             </div>
           </div>

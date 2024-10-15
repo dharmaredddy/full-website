@@ -41,15 +41,16 @@ function NewPostPage() {
           size: parseInt(inputs.size),
           school: parseInt(inputs.school),
           bus: parseInt(inputs.bus),
-          restaurant: parseInt(inputs.restaurant),
+          contact: inputs.contact,  // Updated here
         },
       });
-      navigate("/"+res.data.id)
+      navigate("/" + res.data.id);
     } catch (err) {
       console.log(err);
       setError(error);
     }
   };
+
 
   return (
     <div className="newPostPage">
@@ -107,7 +108,6 @@ function NewPostPage() {
               <select name="property">
                 <option value="apartment">Apartment</option>
                 <option value="house">House</option>
-                <option value="condo">Condo</option>
                 <option value="land">Land</option>
               </select>
             </div>
@@ -149,9 +149,10 @@ function NewPostPage() {
               <input min={0} id="bus" name="bus" type="number" />
             </div>
             <div className="item">
-              <label htmlFor="restaurant">Restaurant</label>
-              <input min={0} id="restaurant" name="restaurant" type="number" />
+              <label htmlFor="contact">Contact Number</label>
+              <input id="contact" name="contact" type="tel" placeholder="Enter contact number" />
             </div>
+
             <button className="sendButton">Add</button>
             {error && <span>error</span>}
           </form>
